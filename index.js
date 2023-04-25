@@ -11,6 +11,10 @@ app.use(express.static("uploads"));
 mongoose.connect(process.env.MONGODB_URL);
 const Produto = require("./models/produto");
 
+//swagger
+const swagger = require("./swagger");
+swagger(app);
+
 // rotas
 const produtosRoutes = require("./routes/produtos");
 app.use(produtosRoutes);
